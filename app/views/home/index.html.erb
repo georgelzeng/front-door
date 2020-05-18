@@ -1,0 +1,17 @@
+<h1> Entering: The Brothel <h1>
+
+<% if signed_in? %>
+  <h1> Signed in as: <%= current_user.name %> <h1>
+  Total usage: <%= current_user.uses %>
+
+  <%= button_to 'Open Door', action: "open"%>
+
+  <%= link_to 'All Users', all_users_path %>
+  <%= button_to 'Sign out', sign_out_path, method: :delete %>
+
+
+
+
+<% else %>
+  <%= link_to 'Sign in', sign_in_path %>
+<% end %>

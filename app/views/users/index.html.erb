@@ -1,0 +1,22 @@
+<h1>Listing Users</h1>
+
+<% if !current_user.admin %>
+	<h1> not admin <h1>
+<% end %>
+ 
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Uses</th>
+    <th></th>
+  </tr>
+ 
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= user.name %></td>
+      <td><%= user.uses %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= button_to 'Go Back ', action: "index", controller: "home"%>
