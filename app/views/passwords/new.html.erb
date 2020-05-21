@@ -1,16 +1,27 @@
-<div id="clearance" class="password-reset">
-  <h2><%= t(".title") %></h2>
+<div id="clearance" class="password-reset sign-up">
+  <div class='sign-in-title-container'>
+    <span class='sign-in-title'> RESET PASSWORD </span>
+  </div>
 
-  <p><%= t(".description") %></p>
+  <div class='form-section'>
+    <p class='form-description'>Enter email to reset password.</p>
 
-  <%= form_for :password, url: passwords_path do |form| %>
-    <div class="text-field">
-      <%= form.label :email %>
-      <%= form.text_field :email, type: 'email' %>
-    </div>
+    <%= form_for :password, url: passwords_path do |form| %>
+      <div class="text-field" id='form-field'>
+        <%= form.text_field :email, type: 'email', :placeholder =>'Email', class:'form-input'%>
+      </div>
 
-    <div class="submit-field">
-      <%= form.submit %>
-    </div>
-  <% end %>
+      <div class="submit-field" id='form-field'>
+        <span class='submit-button'>
+          <%= form.submit 'Submit', :class => 'form-input'%>
+        </span>
+      </div>
+      <div class='sign-in-support-container'>
+        <div class="other-links">
+          <%= link_to t(".sign_in"), sign_in_path, class:'sign-in-support-button'%>
+        </div>
+      </div>
+
+    <% end %>
+  </div>
 </div>

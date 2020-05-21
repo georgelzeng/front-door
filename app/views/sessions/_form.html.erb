@@ -1,22 +1,23 @@
 <%= form_for :session, url: session_path do |form| %>
-  <div class="text-field">
-    <%= form.label :email %>
-    <%= form.text_field :email, type: 'email' %>
-  </div>
+  <div class='form-section'>
+    <div class="text-field" id='form-field'>
+      <%= form.text_field :email, type: 'email', :placeholder =>'Email', class:'form-input' %>
+    </div>
 
-  <div class="password-field">
-    <%= form.label :password %>
-    <%= form.password_field :password %>
-  </div>
+    <div class="password-field" id='form-field'>
+      <%= form.password_field :password, :placeholder => 'Password', class: 'form-input'%>
+    </div>
 
-  <div class="submit-field">
-    <%= form.submit %>
-  </div>
-
-  <div class="other-links">
-    <% if Clearance.configuration.allow_sign_up? %>
-      <%= link_to t(".sign_up"), sign_up_path %>
-    <% end %>
-    <%= link_to t(".forgot_password"), new_password_path %>
+    <div class="submit-field" id='form-field'>
+      <span class='submit-button'>
+        <%= form.submit 'Submit', :class => 'form-input'%>
+      </span>
+    </div>
+    <div class='sign-in-support-container'>
+        <% if Clearance.configuration.allow_sign_up? %>
+          <%= link_to t(".sign_up"), sign_up_path, class:'sign-in-support-button' %>
+        <% end %>
+        <%= link_to t(".forgot_password"), new_password_path, class:'sign-in-support-button' %>
+      </div>
   </div>
 <% end %>
