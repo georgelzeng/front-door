@@ -1,35 +1,40 @@
 <div id="clearance" class="sign-up">
-  <h2><%= t(".title") %></h2>
+  <div class='sign-in-title-container'>
+    <span class='sign-in-title'> SIGN UP </span>
+  </div>
 
   <%= form_with model: @user do |form| %>
-      <div class="text-field">
-        <%= form.label :email %>
-        <%= form.text_field :email, type: 'email' %>
+    <div class='form-section'>
+      <div class="text-field" id='form-field'>
+        <%= form.text_field :email, type: 'email', :placeholder =>'Email', class:'form-input'%>
       </div>
 
-      <div class="text-field">
-        <%= form.label :name %>
-        <%= form.text_field :name, type: 'name' %>
-      </div>
-
-
-      <div class="text-field">
-        <%= label_tag(:keyword, "keyword") %>
-        <%= text_field_tag(:keyword) %>
-      </div>
-
-      <div class="password-field">
-        <%= form.label :password %>
-        <%= form.password_field :password %>
+      <div class="text-field" id='form-field'>
+        <%= form.text_field :name, type: 'name', :placeholder => 'Name', class: 'form-input'%>
       </div>
 
 
-    <div class="submit-field">
-      <%= form.submit %>
-    </div>
+      <div class="text-field" id='form-field'>
+        <%= text_field_tag :keyword, nil, placeholder: 'Keyword', class: 'form-input'%>
+      </div>
 
-    <div class="other-links">
-      <%= link_to t(".sign_in"), sign_in_path %>
+      <div class="password-field" id='form-field'>
+        <%= form.password_field :password, :placeholder => 'Password', class: 'form-input'%>
+      </div>
+
+
+      <div class="submit-field" id='form-field'>
+        <span class='submit-button'>
+          <%= form.submit 'Submit', :class => 'form-input'%>
+        </span>
+      </div>
+
+
+      <div class='sign-in-support-container'>
+        <div class="other-links">
+          <%= link_to t(".sign_in"), sign_in_path, class:'sign-in-support-button'%>
+        </div>
+      </div>
     </div>
   <% end %>
 </div>

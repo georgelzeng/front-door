@@ -1,17 +1,20 @@
-<h1> Entering: The Brothel <h1>
+<div class="container" id="home">
+	<div class="col" id="home-col">
+	<% if signed_in? %>
+		<%= button_to open_path, :method => :post, class: "home-content" do %>
+			<div> 
+				<div class="text-link-container1 container">
+					<p class='text-link1'>Your Usage: <%= current_user.uses %></p>
+				</div>
+				<div class="text-link-container2">
+					<p class='text-link2'>Open Sesame</p>
+				</div>
+				<div class="text-link-container3"> 
+					<p class='text-link3'> Signed in as: <%= current_user.name %></p>
+				</div>
+			</div>
+		<%end %>
+	<% end %>
+	<div>
+</div>
 
-<% if signed_in? %>
-  <h1> Signed in as: <%= current_user.name %> <h1>
-  Total usage: <%= current_user.uses %>
-
-  <%= button_to 'Open Door', action: "open"%>
-
-  <%= link_to 'All Users', all_users_path %>
-  <%= button_to 'Sign out', sign_out_path, method: :delete %>
-
-
-
-
-<% else %>
-  <%= link_to 'Sign in', sign_in_path %>
-<% end %>

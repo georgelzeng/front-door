@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang='en'>
   <head>
     <title>FrontDoor</title>
     <%= csrf_meta_tags %>
@@ -7,9 +7,34 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width initial-scale=1">
   </head>
 
-  <body>
+  <body class="page">
+
+    <header class="container">
+
+      <nav class="navbar">
+          <div class="container-fluid">
+              <div class="navbar-header">
+                <%= link_to 'Entering The Brothel', home_path, class: "navbar-brand" %>
+              </div>
+                <div class='pull-right'> 
+                <% if signed_in? %>
+                  <div><%= link_to 'All Users', all_users_path, class: "navbar-brand"%></div>
+                  <div><%= link_to 'Sign out', sign_out_path, method: :delete, class: "navbar-brand"%></div>
+                <% else %>
+                  <div><%= link_to 'Sign in', sign_in_path, class: "navbar-brand"%></div>
+                <% end %>
+                </div>
+          </div>
+      </nav>
+    </header>
     <%= yield %>
   </body>
 </html>
+
+
+
+
+

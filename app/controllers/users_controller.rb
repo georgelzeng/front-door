@@ -5,11 +5,7 @@ class UsersController < Clearance::UsersController
   	@users = User.all
   end
 
-  def open
-    @user = current_user
-    @user.uses = @user.uses + 1
-    @user.save
-  end
+
 
   def create
     @user = user_from_params
