@@ -8,8 +8,6 @@ class UsersController < Clearance::UsersController
   def delete
 
     @user = User.find(params[:id])
-    puts 'penis'
-    puts @user
     @user.destroy
     redirect_back(fallback_location: all_users_path)
   end
