@@ -1,16 +1,43 @@
-<div class='container-table-page'> 
-  <p class='table-page-title' id ='table'>Listing Users</p>
-  <table class="table">
-    <tr>
-      <th>Name</th>
-      <th>Uses</th>
-    </tr>
-  
-    <% @users.each do |user| %>
-      <tr class='table-row'>
-        <td><div style="width: 50px" ><%= user.name %></div></td>
-        <td><div style="width: 50px" ><%= user.uses %></div></td>
-      </tr>
-    <% end %>
-  </table>
+<div class='sign-in-title-container'> 
+  <span class='sign-in-title'>All Users</span>
+
+  <% if !current_user.admin %>
+    <table class="table table-borderless">
+      <thead >
+        <tr>
+          <th class="table-col">Name</th>
+          <th class="table-col">Uses</th>
+        </tr>
+      <thead>
+
+      <tbody>
+        <% @users.each do |user| %>
+          <tr class='table-row'>
+            <td ><%= user.name %></td>
+            <td><%= user.uses %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% else %>
+    <table class="table table-borderless">
+      <thead >
+        <tr>
+          <th class="table-col">Name</th>
+          <th class="table-col">Uses</th>
+          <th class='table-col'>Delete</th>
+        </tr>
+      <thead>
+
+      <tbody>
+        <% @users.each do |user| %>
+          <tr class='table-row'>
+            <td ><%= user.name %></td>
+            <td><%= user.uses %></td>
+            <td><%= link_to "Yeet", user_delete_path(user), method: "delete", :data => {:confirm => 'Are you sure?'}, class: "sign-in-support-button"%></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% end %>
 </div>
