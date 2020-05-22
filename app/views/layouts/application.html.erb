@@ -17,7 +17,10 @@
       <nav class="navbar">
           <div class="container-fluid">
               <div class="navbar-header">
-                <%= link_to 'Entering The Brothel', home_path, class: "navbar-brand" %>
+                <% if signed_in? %>
+                  <%= link_to 'Entering The Brothel', home_path, class: "navbar-brand" %>
+                <% else %>
+                  <%= link_to 'Entering 2303', home_path, class: "navbar-brand" %>
               </div>
                 <div class='pull-right'> 
                 <% if signed_in? %>

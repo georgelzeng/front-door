@@ -1,24 +1,5 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This application is the web-app designed to interface with a RaspberryPi device in my apartment. Authenticated users can use the website to unlock the front door remotely. Only users provided with a keyword can sign up. 
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+The website can be found here. https://broth2303.herokuapp.com/
