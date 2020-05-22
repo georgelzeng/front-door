@@ -156,11 +156,26 @@ $bg-color: #4994de !default;
 }
 
 
-table#table {
+.table{
 	background: $bg-color;
 	table-layout: fixed;
+	width: 60vw;
+	border:none;
+	margin: auto;
+	color: white;
+	font-family: 'Avenir';
+	margin-top: 5vh;
+	font-size: 20px
 }
 
+.table-col{
+	width: 30vw;
+	text-align: center;
+}
+
+.table-row{
+	border: $bg-color
+}
 
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
@@ -182,7 +197,6 @@ table#table {
 
 
 #clearance {
-	color: white;
 	font-family: 'Avenir';
 	display: flex;
 	flex-direction: column;
@@ -192,10 +206,10 @@ table#table {
 .sign-in-title-container {
 	margin-top: 15vh;
 	text-align: center;
+	color: white;
 }
-
 .sign-in-title {
-	border: none;
+	border: solid 3px;
 	padding-left: 10px;
 	padding-right: 10px;
 	font-size: 50px

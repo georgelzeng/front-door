@@ -5,6 +5,12 @@ class UsersController < Clearance::UsersController
   	@users = User.all
   end
 
+  def delete
+
+    @user = User.find(params[:id])
+    @user.destroy
+    redirect_back(fallback_location: all_users_path)
+  end
 
 
   def create
@@ -36,8 +42,6 @@ class UsersController < Clearance::UsersController
     else
       return
     end
-
-    puts 'post check'
 
     email = user_params.delete(:email)
     name = user_params.delete(:name)
