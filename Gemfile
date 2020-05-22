@@ -20,6 +20,7 @@ gem "clearance"
 gem "figaro"
 gem 'bootstrap-sass', '~> 3.4.1'
 gem 'jquery-rails'
+gem 'httparty'
 
 
 # Use CoffeeScript for .coffee assets and views

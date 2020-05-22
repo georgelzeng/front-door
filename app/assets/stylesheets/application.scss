@@ -138,10 +138,24 @@ $bg-color: #4994de !default;
 }
 
 .text-link3{
-	margin-bottom: 20vh;
+	margin-top: -20vh;
 	@include fluid-type(font-size, 600px, 1200px, 30px, 50px);
 }
 
+.text-link-container4{
+	background: $bg-color;
+	width: 100vw;
+	height: 10vh;
+	border: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.text-link4{
+	margin-top: -20vh;
+	@include fluid-type(font-size, 600px, 1200px, 20px, 30px);
+}
 
 
 .container-table-page{

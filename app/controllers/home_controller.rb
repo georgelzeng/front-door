@@ -12,7 +12,8 @@ class HomeController < ApplicationController
 	def open
 	  	@user = current_user
 	  	@user.uses = @user.uses + 1
-	  	@user.save
+		@user.save
+		response = HTTParty.get(ENV['OPEN_URL'])
 	  	render template: "home/index"
 	end
 
