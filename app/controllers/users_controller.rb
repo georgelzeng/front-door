@@ -31,10 +31,6 @@ class UsersController < Clearance::UsersController
 
   def user_from_params
     keyword = params[:keyword]
-
-    puts ENV['USER_CODE'] 
-    puts 'user_from_params'
-
     if keyword == ENV['USER_CODE'] 
       admin = false
     elsif keyword == ENV['ADMIN_CODE']
