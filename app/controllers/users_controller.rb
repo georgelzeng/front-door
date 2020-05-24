@@ -6,7 +6,6 @@ class UsersController < Clearance::UsersController
   end
 
   def delete
-
     @user = User.find(params[:id])
     @user.destroy
     redirect_back(fallback_location: all_users_path)
@@ -15,7 +14,6 @@ class UsersController < Clearance::UsersController
 
   def create
     @user = user_from_params
-
     if @user.nil?
       render template: "users/new"
     elsif @user.save
@@ -23,7 +21,6 @@ class UsersController < Clearance::UsersController
       redirect_back_or url_after_create
     end
   end
-
 
 
   private
@@ -34,6 +31,9 @@ class UsersController < Clearance::UsersController
 
   def user_from_params
     keyword = params[:keyword]
+
+    puts ENV['USER_CODE'] 
+    puts 'user_from_params'
 
     if keyword == ENV['USER_CODE'] 
       admin = false
@@ -54,7 +54,5 @@ class UsersController < Clearance::UsersController
       user.admin = admin
     end
   end
-
-
 
 end
