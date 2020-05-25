@@ -13,7 +13,7 @@ class HomeController < ApplicationController
 	  	@user = current_user
 	  	@user.uses = @user.uses + 1
 		@user.save
-		response = HTTParty.get(ENV['OPEN_URL'])
+		# response = HTTParty.get(ENV['OPEN_URL'])
 	  	render template: "home/index"
 	end
 

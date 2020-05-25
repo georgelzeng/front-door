@@ -16,7 +16,7 @@
 
       <nav class="navbar">
           <div class="container-fluid">
-              <div class="navbar-header">
+              <div class="pull-left">
                 <% if signed_in? %>
                   <%= link_to 'Entering The Brothel', home_path, class: "navbar-brand" %>
                 <% else %>
@@ -24,12 +24,12 @@
                 <% end %>
               </div>
                 <div class='pull-right'> 
-                <% if signed_in? %>
-                  <div><%= link_to 'All Users', all_users_path, class: "navbar-brand"%></div>
-                  <div><%= link_to 'Sign out', sign_out_path, method: :delete, class: "navbar-brand"%></div>
-                <% else %>
-                  <div><%= link_to 'Sign in', sign_in_path, class: "navbar-brand"%></div>
-                <% end %>
+                  <% if signed_in? %>
+                    <div><%= link_to 'All Users', all_users_path, class: "navbar-brand"%></div>
+                    <div><%= link_to 'Sign out', sign_out_path, method: :delete, class: "navbar-brand"%></div>
+                  <% else %>
+                    <div><%= link_to 'Sign in', sign_in_path, class: "navbar-brand"%></div>
+                  <% end %>
                 </div>
           </div>
       </nav>
