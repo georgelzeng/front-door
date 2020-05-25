@@ -36,6 +36,7 @@ class UsersController < Clearance::UsersController
     elsif keyword == ENV['ADMIN_CODE']
       admin = true
     else
+      flash.alert = 'Incorrect Keyword Entered.'
       return
     end
 

@@ -48,6 +48,10 @@ $bg-color: #4994de !default;
 	color: white;
 	margin: 0
 }
+.container {
+	padding: 0
+}
+
 .container-header {
 	display: flex;
 	flex-direction: row;
@@ -57,6 +61,8 @@ $bg-color: #4994de !default;
 .navbar-brand{
 	color: white;
 	font-family: 'Avenir';
+	// padding-left: 5px;
+	padding-right: 5px;
 }
 .navbar-header{
 }
@@ -87,7 +93,7 @@ $bg-color: #4994de !default;
 	margin: auto;
 	font-family: 'Avenir';
 	color: white;
-	height: 90vh;
+	height: 80vh;
 	width: 100vw;
 	border: none;
 	border-top: solid 1px
